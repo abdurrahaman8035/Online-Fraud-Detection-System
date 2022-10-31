@@ -21,7 +21,7 @@ st.write(
 
     **This Streamlit App  utilizes a Machine Learning model(XGBoost) API to detect potential fraud in credit card transactions.**
 
-    The notebook, model, documentation(FastApi script, Streamlit script) are available on [Github]()
+    The notebook, model, documentation(FastApi script, Streamlit script) are available on [Github](https://github.com/Luissalazarsalinas/Fraud-Detection)
 
     **Made by Luis Fernando Salazar S.**
 
