@@ -41,7 +41,7 @@ Xgboost was chosen like the final model and its hyperparameters were optimized u
 Xgboost was the model with better performance with the test set:
  - Accuracy: 0.99
  - F1-Score: 0.89
- - ROC-AUC: 0.88
+ - ROC-AUC: 0.91
  
  Feature importance
  ![image]()
