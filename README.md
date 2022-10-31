@@ -36,7 +36,7 @@ Xgboost was the model with better performance with the validation set:
  - F1-Score: 0.90
  - ROC-AUC: 0.93
  
-Xgboost was chosen like the final model and its hyperparameters were optimized using hyperopt(library) with a Bayesian optimization like search strategy.
+Xgboost was chosen as the final model, and its hyperparameters were optimized using hyperopt(library) with a Bayesian optimization-like search strategy.
 
 Xgboost was the model with better performance with the test set:
  - Accuracy: 0.99
