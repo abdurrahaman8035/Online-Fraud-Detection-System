@@ -44,7 +44,7 @@ Xgboost was the model with better performance with the test set:
  - ROC-AUC: 0.91
  
  Feature importance
- ![image]()
+ ![image](https://github.com/Luissalazarsalinas/Fraud-Detection/blob/master/img/Feature_importance.png)
 The variables that contribute most to the XGBoost final model were:
  - Type of transferent
  - New balance orig
