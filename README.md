@@ -15,7 +15,7 @@ With the growth of e-commerce websites, people and financial companies rely on o
 
 Therefore, in this project we develop a Streamlit App that utilizes a Machine Learning model(XGBoost) as an API to detect potential fraud in credit card transactions, based on the following criteria: Type of transaction, Amount(money), Old balance orig, New balance orig, Old balance dest, New balance dest.
 
-The App can be viewed through this [link]()
+The App can be viewed through this [link](https://luissalazarsalinas-fraud-detection-fraud-detection-app-zvrvsp.streamlitapp.com/)
 
 [NoteBook]()
 
