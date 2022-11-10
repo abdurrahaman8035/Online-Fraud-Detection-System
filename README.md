@@ -41,9 +41,9 @@ Xgboost was the model with better performance with the validation set:
  - F1-Score: 0.90
  - ROC-AUC: 0.93
  
-Xgboost was chosen as the final model, and its hyperparameters were optimized using hyperopt(library) with a Bayesian optimization-like search strategy.
+Xgboost was chosen as the final model, and its hyperparameters were optimized using hyperopt(library) with a Bayesian optimization as search strategy.
 
-Xgboost was the model with better performance with the test set:
+Final model performance with the test set:
  - Accuracy: 0.99
  - F1-Score: 0.89
  - ROC-AUC: 0.91
@@ -56,4 +56,39 @@ The variables that contribute most to the XGBoost final model were:
  - Old balance orig
 These variables could be good predictors to detect fraud in credit card transactions.
 
-## Deploy
+## Deployment
+The API was deployed using docker container on Heroku and the Streamlit App was deployed on Streamlit Cloud
+
+<details> 
+  <summary><b>💻 Deploying the API</b></summary>
+
+1. Heroku logging 
+
+```
+Heroku log
+```
+
+2. Create a heroku app
+
+```
+heroku create <app-name> 
+```
+
+3. Set the heroku cli git remote to that app
+
+``` 
+heroku git:remote <app-name>
+```
+
+4. Set the heroku stack setting to container
+
+```
+heroku stack:set container
+```
+
+5. Push to herokuPush to heroku
+ 
+```
+git push heroku branch <master/main>
+```
+</details>
