@@ -65,7 +65,7 @@ The API was deployed using docker container on Heroku and the Streamlit App was 
 1. Heroku logging 
 
 ```
-Heroku log
+Heroku login
 ```
 
 2. Create a heroku app
