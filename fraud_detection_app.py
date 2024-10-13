@@ -105,12 +105,6 @@ if result_button:
 
     st.write("""## **Prediction**""")
 
-    # inference from ml api
-    res = requests.post("https://fraud-detector-app.herokuapp.com/prediction", json= data)
-    json_str = json.dumps(res.json())
-    respon = json.loads(json_str)
-
-
 
 if result_button:
     # Transaction details
