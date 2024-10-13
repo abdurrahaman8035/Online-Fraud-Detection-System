@@ -110,10 +110,61 @@ if result_button:
     json_str = json.dumps(res.json())
     respon = json.loads(json_str)
 
-    if sender_name=='' or receiver_name == '':
+   # Predict button
+result_button = st.button("Detect Result")
+
+if result_button:
+    # Transaction details
+    st.write(
+        f""" 
+        ## **Transaction Details**
+
+        #### **User information**:
+
+        Sender Name(ID): {sender_name}\n
+        Receiver Name(ID): {receiver_name}
+
+        #### **Transaction information**:
+
+        Number of Hours it took to complete: {step}\n
+        Type of Transaction: {type}\n
+        Amount Sent: {amount}$\n
+        Sender Balance Before Transaction: {oldbalanceorg}$\n
+        Sender Balance After Transaction: {newbalanceorg}$\n
+        Recipient Balance Before Transaction: {oldbalancedest}$\n
+        Recipient Balance After Transaction: {newbalancedest}$\n
+        System Flag Fraud Status (Transaction amount greater than $200000): {isflaggedfraud}
+        """
+    )
+
+    st.write("""## **Prediction**""")
+
+    # Add if statements to check for fraud conditions
+    if sender_name == '' or receiver_name == '':
         st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
     else:
-        st.write(f"""### The **'{type}'** transaction that took place between {sender_name} and {receiver_name} {respon[0]}.""")
-
-
+        # Condition 1: Check if the amount exceeds a high threshold (e.g., $100,000)
+        if amount > 100000:
+            st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
+            st.warning("⚠️ This transaction is flagged as fraudulent due to a large amount.")
+        
+        # Condition 2: Check if the sender's balance after the transaction is negative (suspicious)
+        elif newbalanceorg < 0:
+            st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
+            st.warning("⚠️ This transaction is flagged as fraudulent due to the sender having a negative balance after the transaction.")
+        
+        # Condition 3: Check if the transaction is of a suspicious type (e.g., CASH_OUT)
+        elif type == "CASH_OUT" and amount > 50000:
+            st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
+            st.warning("⚠️ This transaction is flagged as fraudulent due to a large cash out amount.")
+        
+        # Condition 4: Check if the recipient's balance increases suspiciously
+        elif newbalancedest - oldbalancedest > amount:
+            st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
+            st.warning("⚠️ This transaction is flagged as fraudulent due to an unexpected large increase in the recipient's balance.")
+        
+        # Condition 5: General safe case for legitimate transactions
+        else:
+            st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **non-fraudulent**.""")
+            st.success("✅ This transaction appears legitimate.")
 
