@@ -3,7 +3,8 @@ import requests
 import streamlit as st
 
 # App title
-st.title("Credit Card Transaction Fraud Detection App")
+st.title("Online Fraud Detection System using Machine Learning")
+st.text("PROJECT BY: AHMAD ABDU GOGE")
 
 #some image
 st.image("img/credit_card_fraud.jpg")
@@ -23,7 +24,7 @@ st.write(
 
     The notebook, model, documentation(FastApi script, Streamlit script) are available on [Github](https://github.com/Luissalazarsalinas/Fraud-Detection)
 
-    **Made by Luis Fernando Salazar S.**
+    **Ahmad Abdu Goge.**
 
     """
 )
