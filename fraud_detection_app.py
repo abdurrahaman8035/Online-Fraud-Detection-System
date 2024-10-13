@@ -137,7 +137,7 @@ if result_button:
         """
     )
 
-    st.write("""## **Prediction**""")
+    
 
     # Add if statements to check for fraud conditions
     if sender_name == '' or receiver_name == '':
