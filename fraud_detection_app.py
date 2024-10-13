@@ -79,30 +79,7 @@ if result_button:
         "newbalancedDest": newbalancedest
     }
 
-    ## Transaction detail
-    st.write(
-        f""" 
-        ## **Transaction Details**
-
-        #### **User informantion**:
-
-        Sender Name(ID): {sender_name}\n
-        Receiver Name(ID): {receiver_name}
-
-        #### **Transaction information**:
-
-        Number of Hours it took to complete: {step}\n
-        Type of Transaction: {type}\n
-        Amount Sent: {amount}$\n
-        Sender Balance Before Transaction: {oldbalanceorg}$\n
-        Sender Balance After Transaction: {newbalanceorg}$\n
-        Recepient Balance Before Transaction: {oldbalancedest}$\n
-        Recepient Balance After Transaction: {newbalancedest}$\n
-        System Flag Fraud Status(Transaction amount greater than $200000): {isflaggedfraud}
-
-        """
-    )
-
+    
     st.write("""## **Prediction**""")
 
 
