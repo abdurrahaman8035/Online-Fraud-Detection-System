@@ -20,12 +20,6 @@ st.write(
     effective fraud detection system is necessary in order to reduce the losses incurred by the
     customers and financial companies. 
 
-    **This Streamlit App  utilizes a Machine Learning model(XGBoost) API to detect potential fraud in credit card transactions.**
-
-    The notebook, model, documentation(FastApi script, Streamlit script) are available on [Github](https://github.com/Luissalazarsalinas/Fraud-Detection)
-
-    **Ahmad Abdu Goge.**
-
     """
 )
 
