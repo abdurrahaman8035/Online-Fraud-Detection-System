@@ -103,7 +103,7 @@ if result_button:
         Sender Balance After Transaction: {newbalanceorg}$\n
         Recipient Balance Before Transaction: {oldbalancedest}$\n
         Recipient Balance After Transaction: {newbalancedest}$\n
-        System Flag Fraud Status (Transaction amount greater than $200000): {isflaggedfraud}
+        
         """
     )
 
