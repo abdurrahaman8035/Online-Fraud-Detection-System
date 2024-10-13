@@ -110,8 +110,7 @@ if result_button:
     json_str = json.dumps(res.json())
     respon = json.loads(json_str)
 
-   # Predict button
-result_button = st.button("Detect Result")
+
 
 if result_button:
     # Transaction details
