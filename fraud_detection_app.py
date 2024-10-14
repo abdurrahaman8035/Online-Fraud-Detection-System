@@ -98,11 +98,11 @@ if result_button:
 
         Number of Hours it took to complete: {step}\n
         Type of Transaction: {type}\n
-        Amount Sent: {amount}$\n
-        Sender Balance Before Transaction: {oldbalanceorg}$\n
-        Sender Balance After Transaction: {newbalanceorg}$\n
-        Recipient Balance Before Transaction: {oldbalancedest}$\n
-        Recipient Balance After Transaction: {newbalancedest}$\n
+        Amount Sent: N{amount}\n
+        Sender Balance Before Transaction: N{oldbalanceorg}\n
+        Sender Balance After Transaction: {newbalanceorg}\n
+        Recipient Balance Before Transaction: N{oldbalancedest}\n
+        Recipient Balance After Transaction: N{newbalancedest}\n
         
         """
     )
@@ -113,8 +113,8 @@ if result_button:
     if sender_name == '' or receiver_name == '':
         st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
     else:
-        # Condition 1: Check if the amount exceeds a high threshold (e.g., $100,000)
-        if amount > 100000:
+        # Condition 1: Check if the amount exceeds a high threshold (e.g., N100,000,000)
+        if amount > 100000000:
             st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
             st.warning("⚠️ This transaction is flagged as fraudulent due to a large amount.")
         
