@@ -15,8 +15,9 @@ def login(user, pwd):
 # Logout function
 def logout():
     st.session_state.logged_in = False
+    st.experimental_rerun()  # Rerun the app to refresh after logging out
 
-# Show login page if not logged in
+# Show the login page if the user is not logged in
 if not st.session_state.logged_in:
     st.title("Login")
     username = st.text_input("Username")
@@ -26,10 +27,10 @@ if not st.session_state.logged_in:
     if login_button:
         login(username, password)
 else:
-    # Add a logout button
-    st.sidebar.button("Logout", on_click=logout)
+    # If logged in, show the main page and hide the login page
+    st.sidebar.button("Logout", on_click=logout)  # Add logout button in sidebar
 
-    # App title
+    # Main App content after login
     st.title("Online Fraud Detection System using Machine Learning")
     st.text("PROJECT BY: AHMAD ABDU GOGE")
 
@@ -66,12 +67,12 @@ else:
     st.sidebar.header("Input user and transaction information")
 
     # User data
-    sender_name = st.sidebar.text_input(" Sender Name ID")
-    receiver_name = st.sidebar.text_input(" Receiver Name ID")
+    sender_name = st.sidebar.text_input("Sender Name ID")
+    receiver_name = st.sidebar.text_input("Receiver Name ID")
 
     # Transaction information
     type_labels = ("PAYMENT", "TRANSFER", "CASH_OUT", "DEBIT", "CASH_IN")
-    type = st.sidebar.selectbox(" Type of transaction", type_labels)
+    type = st.sidebar.selectbox("Type of transaction", type_labels)
 
     step = st.sidebar.slider("Number of Hours it took the Transaction to complete:", min_value=0, max_value=744)
 
