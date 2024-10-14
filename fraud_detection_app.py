@@ -27,8 +27,6 @@ if not st.session_state.logged_in:
     if login_button:
         login(username, password)
 else:
-    # If logged in, show the main page and hide the login page
-    st.sidebar.button("Logout", on_click=logout)  # Add logout button in sidebar
 
     # Main App content after login
     st.title("Online Fraud Detection System using Machine Learning")
