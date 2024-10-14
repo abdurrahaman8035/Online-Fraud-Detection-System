@@ -28,8 +28,6 @@ st.write(
 def type_transaction(content):
     if content == "PAYMENT":
         content = 0
-    elif content == "TRANSFER":
-        content = 1
     elif content == "CASH_OUT":
         content = 2
     elif content == "DEBIT":
@@ -57,11 +55,7 @@ newbalanceorg = st.sidebar.number_input("""Sender Balance After Transaction was 
 oldbalancedest = st.sidebar.number_input("""Recipient Balance Before Transaction was made""",min_value=0, max_value=110000)
 newbalancedest = st.sidebar.number_input("""Recipient Balance After Transaction was made""",min_value=0, max_value=110000)
 ## flag 
-isflaggedfraud = "Non fraudulent"
-if amount >= 200000:
-  isflaggedfraud = "Fraudulent transaction"
-else:
-  isflaggedfraud = "Non fraudulent"
+
 
 
 result_button = st.button("Detect Result")
@@ -124,7 +118,7 @@ if result_button:
             st.warning("⚠️ This transaction is flagged as fraudulent due to the sender having a negative balance after the transaction.")
         
         # Condition 3: Check if the transaction is of a suspicious type (e.g., CASH_OUT)
-        elif type == "CASH_OUT" and amount > 50000:
+        elif type == "CASH_OUT" and amount > 5000000:
             st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
             st.warning("⚠️ This transaction is flagged as fraudulent due to a large cash out amount.")
         
