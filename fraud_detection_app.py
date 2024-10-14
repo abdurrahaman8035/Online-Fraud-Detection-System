@@ -159,7 +159,7 @@ if result_button:
         st.write("Error! Please input Transaction ID or Names of Sender and Receiver!")
     else:
         # Condition 1: Check if the amount exceeds a high threshold (e.g., N100,000,000)
-        if amount > 100000000:
+        if amount > 50000000:
             st.write(f"""### The **'{type}'** transaction between {sender_name} and {receiver_name} is predicted to be **fraudulent**.""")
             st.warning("⚠️ This transaction is flagged as fraudulent due to a large amount.")
         
