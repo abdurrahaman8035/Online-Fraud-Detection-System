@@ -51,7 +51,7 @@ type = st.sidebar.selectbox(" Type of transaction", type_lebels)
 
 step = st.sidebar.slider("Number of Hours it took the Transaction to complete:", min_value = 0, max_value = 744)
 
-amount = st.sidebar.number_input("Amount in $",min_value=0, max_value=110000)
+amount = st.sidebar.number_input("Amount in Naira",min_value=0, max_value=110000)
 oldbalanceorg = st.sidebar.number_input("""Sender Balance Before Transaction was made""",min_value=0, max_value=110000)
 newbalanceorg = st.sidebar.number_input("""Sender Balance After Transaction was made""",min_value=0, max_value=110000)
 oldbalancedest = st.sidebar.number_input("""Recipient Balance Before Transaction was made""",min_value=0, max_value=110000)
