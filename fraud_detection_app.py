@@ -15,7 +15,7 @@ def login(user, pwd):
 # Logout function
 def logout():
     st.session_state.logged_in = False
-    st.experimental_rerun()  # Rerun the app to refresh after logging out
+    
 
 # Show the login page if the user is not logged in
 if not st.session_state.logged_in:
